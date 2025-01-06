@@ -1,5 +1,10 @@
-let inputBtn = document.getElementById("input-el")
+let myLead = []
+const inputEl = document.getElementById("input-el")
+const inputBtn = document.getElementById("input-btn")
+const ulEl = document.getElementById("ul-el")
+console.log(ulEl)
 
-function saveInput() {
-    console.log("Button clicked")
-}
+inputBtn.addEventListener("click", function() {
+    myLead.push(inputEl.value)
+    console.log(myLead)
+})
