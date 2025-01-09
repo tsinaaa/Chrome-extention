@@ -25,6 +25,19 @@ function render(leads) {
     ulEl.innerHTML = leadItems
 }
 
+tabBtn.addEventListener("click", function() {
+    /* chronme.tabs.query({active: true, currentWindow: true}, function(tabs){
+        myLead.push(tabs[0].url)
+        localStorage.setItem("myLead", JSON.stringify(myLead))
+        render(myLead)
+    }) */
+        chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+            myLead.push(tabs[0].url);
+            localStorage.setItem("myLead", JSON.stringify(myLead));
+            render(myLead);
+        });
+})
+
 deleteBtn.addEventListener("dblclick", function() {
     localStorage.clear("myLead")
     myLead = []
